@@ -1,0 +1,84 @@
+{
+  "usuario": [
+    {
+      "id": "6",
+      "email": "teste@teste.com",
+      "senha": "123"
+    },
+    {
+      "id": "1",
+      "nome": "Kaique Bernardo Moreira",
+      "cpf": "360.312.681-59",
+      "data_nasc": "24/07/1953",
+      "sexo": "Masculino",
+      "email": "kaique_bernardo_moreira@caporal.biz",
+      "senha": "6woqtTRj04",
+      "cep": "58103-748",
+      "endereco": "Rua Dezessete de Abril",
+      "numero": 375,
+      "bairro": "Jardim Camboinha",
+      "cidade": "Cabedelo",
+      "estado": "PB"
+    },
+    {
+      "id": "2",
+      "nome": "Maria Eloá Josefa Araújo",
+      "cpf": "262.725.336-08",
+      "data_nasc": "07/02/2004",
+      "sexo": "Feminino",
+      "sail": "mariaeloaaraujo@gsw.com.br",
+      "senha": "ZgaNXnCrtD",
+      "cep": "57600-450",
+      "endereco": "Travessa José Dias de Oliveira",
+      "numero": 612,
+      "bairro": "Centro",
+      "cidade": "Palmeira dos Índios",
+      "estado": "AL"
+    },
+    {
+      "id": "3",
+      "nome": "Hugo Pietro Eduardo Aparício",
+      "cpf": "336.178.093-40",
+      "data_nasc": "15/03/1965",
+      "sexo": "Masculino",
+      "email": "hugopietroaparicio@bol.com.br",
+      "senha": "uMs9R1ST5K",
+      "cep": "89253-035",
+      "endereco": "Travessa Ministro Luiz Gallotti",
+      "numero": 165,
+      "bairro": "Centro",
+      "cidade": "Jaraguá do Sul",
+      "estado": "SC"
+    },
+    {
+      "id": "4",
+      "nome": "Evelyn Daiane Almeida",
+      "cpf": "780.838.296-50",
+      "data_nasc": "20/04/1950",
+      "sexo": "Feminino",
+      "email": "evelyn-almeida82@eclatt.com.br",
+      "senha": "WF6qq6hW4s",
+      "cep": "86670-970",
+      "endereco": "Avenida Governador Moisés Lupion 795",
+      "numero": 531,
+      "bairro": "Centro",
+      "cidade": "Itaguajé",
+      "estado": "PR"
+    },
+    {
+      "id": "5",
+      "nome": "Lorenzo Caio Cavalcanti",
+      "cpf": "471.214.871-36",
+      "data_nasc": "01/07/2006",
+      "sexo": "Masculino",
+      "email": "lorenzo_cavalcanti@nelsonalfredoimoveis.com.br",
+      "senha": "qiNxJou5jq",
+      "cep": "95045-118",
+      "endereco": "Rua João Gregório Paniz",
+      "numero": 627,
+      "bairro": "Centenário",
+      "cidade": "Caxias do Sul",
+      "estado": "RS"
+    }
+  ]
+}
