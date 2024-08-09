@@ -24,7 +24,7 @@ function Login() {
 
   return (
     <div className="container">
-      <form className="form-container" onSubmit={handleSubmit(userLogin)}>
+      <form className="form-container-login" onSubmit={handleSubmit(userLogin)}>
         <h1>Login</h1>
         <div className="form-group">
           <label htmlFor="email">Email</label>
