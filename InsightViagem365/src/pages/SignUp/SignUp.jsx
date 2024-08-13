@@ -1,38 +1,52 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { validateCPF, validateEmail } from "../../components/Validate/Validate";
 import { api } from "../../services/api";
 import { viaCep } from "../../services/viaCep";
 import "./SignUp.css";
 
 function SignUp() {
-  const { register, handleSubmit, formState, setValue, reset, watch } =
+  const { register, handleSubmit,formState, setValue, reset, watch } =
     useForm();
   const cep = watch("cep");
 
   async function addUser(data) {
+    const cpf = data.cpf;
+    const email = data.email;
+
+    const cpfExists = await validateCPF(cpf);
+    const emailExists = await validateEmail(email);
+
+    if (cpfExists || emailExists) {
+      return;
+    }
     try {
       const response = await api("/usuario", {
         method: "POST",
         body: JSON.stringify(data),
       });
       const result = await response.json();
-      console.log(result);
-    } catch (error) {}
+      alert('Usuário cadastrado com sucesso', result)
+     } catch (error) {
+      console.error("Erro ao cadastrar usuário:", error);
+    }
   }
   async function addressUser(cep) {
     if (cep && cep.length === 8) {
       try {
         const data = await viaCep(cep);
 
-        console.log(data);
         setValue("logradouro", data.logradouro);
         setValue("bairro", data.bairro);
         setValue("cidade", data.localidade);
         setValue("estado", data.uf);
-      } catch (error) {}
+      } catch (error) {
+        console.error("Erro ao buscar endereço:", error);
+      }
     }
   }
+  
   useEffect(() => {
     addressUser(cep);
   }, [cep]);
@@ -41,8 +55,11 @@ function SignUp() {
     <>
       <div className="container-SignUp">
         <div className="back">
-          <form onSubmit={handleSubmit(addUser)} className="form-container-signup">
-            <div className="form-floating mb-3">
+          <form
+            onSubmit={handleSubmit(addUser)}
+            className="form-container-signup"
+          >
+            <div className="form-floating mb-0">
               <input
                 className="form-control input-h"
                 id="floatingNome"
@@ -50,19 +67,22 @@ function SignUp() {
                 {...register("nome", { required: "O nome é obrigatório" })}
               />
               <label htmlFor="floatingNome">Nome</label>
+              <span>{formState.errors?.nome?.message}</span>
             </div>
-            {formState.errors?.nome?.message}
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-0">
               <input
                 className="form-control"
                 id="floatingCPF"
-                placeholder="CPF"
-                {...register("CPF", { required: "O CPF é obrigatório" })}
+                placeholder="cpf"
+                {...register("cpf", {
+                  required: "O CPF é obrigatório",
+                  maxLength: 11,
+                })}
               />
               <label htmlFor="floatingCPF">CPF</label>
+              <span>{formState.errors?.cpf?.message}</span>
             </div>
-            {formState.errors?.CPF?.message}
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-0">
               <input
                 type="date"
                 className="form-control"
@@ -72,9 +92,10 @@ function SignUp() {
                 })}
               />
               <label htmlFor="floatingDate">Data de Nascimento</label>
+              <span>{formState.errors?.dataNascimento?.message}</span>
             </div>
-            {formState.errors?.dataNascimento?.message}
-            <div className="form-floating mb-3">
+
+            <div className="form-floating mb-0">
               <input
                 className="form-control"
                 id="floatingInput"
@@ -82,21 +103,12 @@ function SignUp() {
                 {...register("email", { required: "O email é obrigatório" })}
               />
               <label htmlFor="floatingInput">Email</label>
+              <span>{formState.errors?.email?.message}</span>
             </div>
-            {formState.errors?.email?.message}
-            <div className="form-floating mb-3">
-              <input
-                className="form-control"
-                id="floatingPassword"
-                placeholder="Senha"
-                type="password"
-                {...register("senha", { required: "A senha é obrigatória" })}
-              />
-              <label htmlFor="floatingPassword">Senha</label>
-            </div>
-            {formState.errors?.senha?.message}
+
+
             <fieldset className="fieldset" id="fieldset">
-              <p>Sexo</p>
+                <p>Sexo</p>
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -105,7 +117,7 @@ function SignUp() {
                   value="Feminino"
                   id="flexRadioDefault1"
                   {...register("sexo")}
-                />
+                  />
                 <label className="form-check-label" htmlFor="flexRadioDefault1">
                   Feminino
                 </label>
@@ -125,19 +137,31 @@ function SignUp() {
                 </label>
               </div>
             </fieldset>
+            <div className="form-floating mb-0">
+              <input
+                className="form-control"
+                id="floatingPassword"
+                placeholder="Senha"
+                type="password"
+                {...register("senha", { required: "A senha é obrigatória" })}
+              />
+              <label htmlFor="floatingPassword">Senha</label>
+              <span>{formState.errors?.senha?.message}</span>
+            </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-0">
               <input
                 type="text"
                 className="form-control h-25 d-inline-block"
                 id="floatingCep"
                 placeholder="cep"
-                {...register("cep", {})}
+                {...register("cep", { required: "Cep é obrigatório" })}
               />
               <label htmlFor="floatingCep">CEP</label>
+              <span>{formState.errors?.cep?.message}</span>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-0">
               <input
                 type="text"
                 className="form-control"
@@ -146,10 +170,11 @@ function SignUp() {
                 {...register("logradouro")}
               />
               <label htmlFor="floatingLogradouro">Endereço</label>
+            <span>{formState.errors?.logradouro?.message}</span>
             </div>
 
-            {formState.errors?.endereco?.message}
-            <div className="form-floating mb-3">
+
+            <div className="form-floating mb-0">
               <input
                 type="text"
                 className="form-control"
@@ -158,10 +183,10 @@ function SignUp() {
                 {...register("bairro")}
               />
               <label htmlFor="floatingBairro">Bairro</label>
+            <span>{formState.errors?.bairro?.message}</span>
             </div>
-            {formState.errors?.bairro?.message}
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-0">
               <input
                 type="text"
                 className="form-control"
@@ -170,10 +195,10 @@ function SignUp() {
                 {...register("cidade")}
               />
               <label htmlFor="floatingCidade">Cidade</label>
+            <span>{formState.errors?.cidade?.message}</span>
             </div>
-            {formState.errors?.cidade?.message}
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-0">
               <input
                 type="text"
                 className="form-control"
@@ -182,8 +207,8 @@ function SignUp() {
                 {...register("estado")}
               />
               <label htmlFor="floatingEstado">Estado</label>
+            <span>{formState.errors?.estado?.message}</span>
             </div>
-            {formState.errors?.estado?.message}
 
             <button type="submit" className="btn btn-primary">
               Cadastrar

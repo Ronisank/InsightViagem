@@ -16,9 +16,9 @@ export function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     try {
       const response = await api(`/usuario?email=${email}&senha=${password}`);
-      console.log(response);
+     
       const data = await response.json();
-      console.log(data);
+     
 
       if (data.length > 0) {
         const usuario = data[0];

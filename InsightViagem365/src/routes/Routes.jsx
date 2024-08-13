@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { PrivateRoute } from "../components/PrivateRoute";
+import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import { EditLocation } from "../pages/EditLocations/Editar";
 import RegistrationLocation from "../pages/RegisterLocations/RegisterLocations";

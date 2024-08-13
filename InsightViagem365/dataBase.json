@@ -1,14 +1,9 @@
 {
   "usuario": [
     {
-      "id": "6",
-      "email": "teste@teste.com",
-      "senha": "123"
-    },
-    {
       "id": "1",
       "nome": "Kaique Bernardo Moreira",
-      "cpf": "360.312.681-59",
+      "cpf": "36031268159",
       "data_nasc": "24/07/1953",
       "sexo": "Masculino",
       "email": "kaique_bernardo_moreira@caporal.biz",
@@ -23,10 +18,10 @@
     {
       "id": "2",
       "nome": "Maria Eloá Josefa Araújo",
-      "cpf": "262.725.336-08",
+      "cpf": "26272533608",
       "data_nasc": "07/02/2004",
       "sexo": "Feminino",
-      "sail": "mariaeloaaraujo@gsw.com.br",
+      "email": "mariaeloaaraujo@gsw.com.br",
       "senha": "ZgaNXnCrtD",
       "cep": "57600-450",
       "endereco": "Travessa José Dias de Oliveira",
@@ -38,7 +33,7 @@
     {
       "id": "3",
       "nome": "Hugo Pietro Eduardo Aparício",
-      "cpf": "336.178.093-40",
+      "cpf": "33617809340",
       "data_nasc": "15/03/1965",
       "sexo": "Masculino",
       "email": "hugopietroaparicio@bol.com.br",
@@ -53,7 +48,7 @@
     {
       "id": "4",
       "nome": "Evelyn Daiane Almeida",
-      "cpf": "780.838.296-50",
+      "cpf": "78083829650",
       "data_nasc": "20/04/1950",
       "sexo": "Feminino",
       "email": "evelyn-almeida82@eclatt.com.br",
@@ -68,7 +63,7 @@
     {
       "id": "5",
       "nome": "Lorenzo Caio Cavalcanti",
-      "cpf": "471.214.871-36",
+      "cpf": "47121487136",
       "data_nasc": "01/07/2006",
       "sexo": "Masculino",
       "email": "lorenzo_cavalcanti@nelsonalfredoimoveis.com.br",
@@ -79,6 +74,20 @@
       "bairro": "Centenário",
       "cidade": "Caxias do Sul",
       "estado": "RS"
+    },
+    {
+      "id": "1294",
+      "nome": "Roni Santos Rodrigues",
+      "cpf": "12345678911",
+      "dataNascimento": "2024-05-06",
+      "email": "teste@teste.com",
+      "senha": "123",
+      "sexo": "Masculino",
+      "cep": "88107447",
+      "logradouro": "Rua Josemar José Schmitt",
+      "bairro": "Forquilhas",
+      "cidade": "São José",
+      "estado": "SC"
     }
   ],
   "Locais": [
@@ -133,8 +142,9 @@
       "longitude": -37.7036
     },
     {
-      "id": "edef",
+      "id": "d216",
       "cep": "25640400",
+      "local": "Antônio Latsch",
       "cidade": "Petrópolis",
       "estado": "RJ",
       "descricao": "Cidade serrana, lugar de veraneio da família imperial portuguesa",
@@ -142,18 +152,6 @@
       "longitude": "-43.19307",
       "logradouro": "Vila Antônio Latsch",
       "bairro": "Castelanea"
-    },
-    {
-      "id": "b747",
-      "cep": "",
-      "local": "Rua Josemar José Schmitt",
-      "cidade": "São José",
-      "estado": "SC",
-      "descricao": "tertyui",
-      "latitude": "-27.58761",
-      "longitude": "-48.67145",
-      "logradouro": "Rua Josemar José Schmitt",
-      "bairro": "Forquilhas"
     }
   ]
 }
