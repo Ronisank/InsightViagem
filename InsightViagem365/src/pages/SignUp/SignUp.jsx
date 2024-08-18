@@ -1,14 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { validateCPF, validateEmail } from "../../components/Validate/Validate";
 import { api } from "../../services/api";
 import { viaCep } from "../../services/viaCep";
 import "./SignUp.css";
 
 function SignUp() {
-  const { register, handleSubmit,formState, setValue, reset, watch } =
+  const { register, handleSubmit, formState, setValue, reset, watch } =
     useForm();
+  const navigate = useNavigate();
   const cep = watch("cep");
 
   async function addUser(data) {
@@ -27,8 +29,9 @@ function SignUp() {
         body: JSON.stringify(data),
       });
       const result = await response.json();
-      alert('Usuário cadastrado com sucesso', result)
-     } catch (error) {
+      alert("Usuário cadastrado com sucesso", result);
+      navigate("/");
+    } catch (error) {
       console.error("Erro ao cadastrar usuário:", error);
     }
   }
@@ -46,7 +49,7 @@ function SignUp() {
       }
     }
   }
-  
+
   useEffect(() => {
     addressUser(cep);
   }, [cep]);
@@ -106,9 +109,8 @@ function SignUp() {
               <span>{formState.errors?.email?.message}</span>
             </div>
 
-
             <fieldset className="fieldset" id="fieldset">
-                <p>Sexo</p>
+              <p>Sexo</p>
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -117,7 +119,7 @@ function SignUp() {
                   value="Feminino"
                   id="flexRadioDefault1"
                   {...register("sexo")}
-                  />
+                />
                 <label className="form-check-label" htmlFor="flexRadioDefault1">
                   Feminino
                 </label>
@@ -170,9 +172,8 @@ function SignUp() {
                 {...register("logradouro")}
               />
               <label htmlFor="floatingLogradouro">Endereço</label>
-            <span>{formState.errors?.logradouro?.message}</span>
+              <span>{formState.errors?.logradouro?.message}</span>
             </div>
-
 
             <div className="form-floating mb-0">
               <input
@@ -183,7 +184,7 @@ function SignUp() {
                 {...register("bairro")}
               />
               <label htmlFor="floatingBairro">Bairro</label>
-            <span>{formState.errors?.bairro?.message}</span>
+              <span>{formState.errors?.bairro?.message}</span>
             </div>
 
             <div className="form-floating mb-0">
@@ -195,7 +196,7 @@ function SignUp() {
                 {...register("cidade")}
               />
               <label htmlFor="floatingCidade">Cidade</label>
-            <span>{formState.errors?.cidade?.message}</span>
+              <span>{formState.errors?.cidade?.message}</span>
             </div>
 
             <div className="form-floating mb-0">
@@ -207,7 +208,7 @@ function SignUp() {
                 {...register("estado")}
               />
               <label htmlFor="floatingEstado">Estado</label>
-            <span>{formState.errors?.estado?.message}</span>
+              <span>{formState.errors?.estado?.message}</span>
             </div>
 
             <button type="submit" className="btn btn-primary">
