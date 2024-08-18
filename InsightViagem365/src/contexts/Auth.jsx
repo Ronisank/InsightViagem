@@ -8,27 +8,33 @@ export const AuthContext = createContext({
 });
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    const user = localStorage.getItem("insightViagem365");
+    return user ? JSON.parse(user) : null;
+  });
 
   async function signIn({ email, password }) {
-    try{
+    try {
       const response = await api(`/usuario?email=${email}&senha=${password}`);
+      console.log(response);
       const data = await response.json();
       console.log(data);
 
-    if (data.length > 0) {
-      const usuario = data[0];
-      setUser(usuario);
-      return true;
+      if (data.length > 0) {
+        const usuario = data[0];
+        if (usuario.email === email && usuario.senha === password) {
+          setUser(usuario);
+          localStorage.setItem("insightViagem365", JSON.stringify(usuario));
+          return true;
+        }
+      }
+      return false;
+    } catch (error) {
+      console.error("Error during sign in:", error);
+      return false;
     }
-    return false;
-
-  } catch (error) {
-      console.error('Error during sign in:', error);
-  return false; 
   }
-}
-function signOut() {
+  function signOut() {
     setUser(null);
   }
 

@@ -80,5 +80,80 @@
       "cidade": "Caxias do Sul",
       "estado": "RS"
     }
+  ],
+  "Locais": [
+    {
+      "id": "1",
+      "local": "Praia de Tambaba",
+      "cidade": "Conde",
+      "estado": "PB",
+      "pais": "Brasil",
+      "descricao": "A Praia de Tambaba é uma praia brasileira localizada no município de Conde, no estado da Paraíba. É conhecida por ser a primeira praia oficial de naturismo do Nordeste e por suas falésias avermelhadas. A praia é dividida em duas partes: a parte norte, onde o naturismo é obrigatório, e a parte sul, onde o naturismo é opcional.",
+      "latitude": -7.2411,
+      "longitude": -34.8256
+    },
+    {
+      "id": "2",
+      "local": "Praia de Pipa",
+      "cidade": "Tibau do Sul",
+      "estado": "RN",
+      "pais": "Brasil",
+      "descricao": "A Praia de Pipa é uma praia brasileira localizada no município de Tibau do Sul, no estado do Rio Grande do Norte. É conhecida por suas falésias avermelhadas, suas águas cristalinas e por ser um dos destinos turísticos mais badalados do Brasil. A praia é dividida em várias partes, como a Praia do Amor, a Praia do Centro e a Praia do Madeiro.",
+      "latitude": -6.2313,
+      "longitude": -35.0573
+    },
+    {
+      "id": "3",
+      "local": "Praia de Jericoacoara",
+      "cidade": "Jijoca de Jericoacoara",
+      "estado": "CE",
+      "pais": "Brasil",
+      "descricao": "A Praia de Jericoacoara é uma praia brasileira localizada no município de Jijoca de Jericoacoara, no estado do Ceará. É conhecida por suas dunas, suas lagoas de água doce e por ser um dos destinos turísticos mais bonitos do Brasil. A praia é dividida em várias partes, como a Praia Principal, a Praia da Malhada e a Praia de Jericoacoara.",
+      "latitude": -2.7938,
+      "longitude": -40.5167
+    },
+    {
+      "id": "4",
+      "local": "Praia de Copacabana",
+      "cidade": "Rio de Janeiro",
+      "estado": "RJ",
+      "pais": "Brasil",
+      "descricao": "A Praia de Copacabana é uma praia brasileira localizada no bairro de Copacabana, na cidade do Rio de Janeiro, no estado do Rio de Janeiro. É conhecida por sua calçada de pedras portuguesas, por seu calçadão, por seus quiosques e por ser um dos destinos turísticos mais famosos do Brasil. A praia é dividida em várias partes, como a Praia do Leme, a Praia de Copacabana e a Praia do Diabo.",
+      "latitude": -22.9719,
+      "longitude": -43.1826
+    },
+    {
+      "id": "5",
+      "local": "Praia de Canoa Quebrada",
+      "cidade": "Aracati",
+      "estado": "CE",
+      "pais": "Brasil",
+      "descricao": "A Praia de Canoa Quebrada é uma praia brasileira localizada no município de Aracati, no estado do Ceará. É conhecida por suas falésias avermelhadas, suas dunas, suas lagoas de água doce e por ser um dos destinos turísticos mais bonitos do Brasil. A praia é dividida em várias partes, como a Praia de Canoa Quebrada, a Praia de Majorlândia e a Praia de Quixaba.",
+      "latitude": -4.5281,
+      "longitude": -37.7036
+    },
+    {
+      "id": "edef",
+      "cep": "25640400",
+      "cidade": "Petrópolis",
+      "estado": "RJ",
+      "descricao": "Cidade serrana, lugar de veraneio da família imperial portuguesa",
+      "latitude": "-22.53244",
+      "longitude": "-43.19307",
+      "logradouro": "Vila Antônio Latsch",
+      "bairro": "Castelanea"
+    },
+    {
+      "id": "b747",
+      "cep": "",
+      "local": "Rua Josemar José Schmitt",
+      "cidade": "São José",
+      "estado": "SC",
+      "descricao": "tertyui",
+      "latitude": "-27.58761",
+      "longitude": "-48.67145",
+      "logradouro": "Rua Josemar José Schmitt",
+      "bairro": "Forquilhas"
+    }
   ]
 }
