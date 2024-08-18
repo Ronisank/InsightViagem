@@ -1,0 +1,48 @@
+.table-container {
+  max-height: 450px; /* Altura máxima da tabela com rolagem */
+  overflow-y: auto;
+  background-color: transparent; /* Fundo da tabela transparente */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo para o cabeçalho fixo */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container thead {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo semitransparente para o cabeçalho */
+  z-index: 10;
+}
+
+/* Estilo para as linhas da tabela */
+.table-container tbody tr {
+  background-color: transparent;
+}
+
+/* Estilo para a barra de rolagem */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #f1e0d6; /* Cor do fundo da barra de rolagem */
+  border-radius: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #bf988f; /* Cor do polegar da barra de rolagem */
+  border-radius: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #595775; /* Cor do polegar ao passar o mouse */
+}
+.penbox{
+    color: #595775;
+}

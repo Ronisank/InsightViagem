@@ -1,0 +1,58 @@
+.elements-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #595775;
+  color: #f1e0d6;
+  align-items: center;
+  padding: 25px;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.user {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 10px;
+  flex-wrap: wrap;
+}
+.home {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-right: auto;
+  margin-left: 10px;
+  color: #f1e0d6;
+}
+.home-icon {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-right: auto;
+  margin-left: 10px;
+  color: #f1e0d6;
+}
+.locations {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-right: auto;
+  margin-left: 10px;
+  color: #f1e0d6;
+}
+.exit {
+  display: flex;
+  margin-right: auto;
+  margin-left: 10px;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.logout {
+  background-color: transparent;
+  border: none;
+  color: #f1e0d6;
+}
+.mappin {
+  color: #f1e0d6;
+}
