@@ -15,7 +15,6 @@ function Dashboard() {
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   useEffect(() => {
-    // Função para buscar Locais da API
     const fetchData = async () => {
       try {
         const response = await api("/Locais/");
