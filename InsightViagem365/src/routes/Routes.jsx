@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import { EditLocation } from "../pages/EditLocations/Editar";
+import Locations from "../pages/Locations/Locations";
 import RegistrationLocation from "../pages/RegisterLocations/RegisterLocations";
 import Login from "../pages/SignIn/Login";
 import SignUp from "../pages/SignUp/SignUp";
@@ -24,12 +25,16 @@ export const AppRoutes = createBrowserRouter([
         element: <Dashboard />,
       },
           {
-            path:'/dashboard/locais',
+            path:'cadastrarLocais',
             element:<RegistrationLocation/>,
       },
       {
         path: "locais/:id",
         element: <EditLocation />,
+      },
+      {
+        path: "tabelaLocais",
+        element: <Locations />,
       },
     ],
   },

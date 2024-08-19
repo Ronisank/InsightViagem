@@ -2,7 +2,8 @@
   "usuario": [
     {
       "id": "1",
-      "nome": "Kaique Bernardo Moreira",
+      "nome": "Kaique",
+      "sobrenome": " Bernardo Moreira",
       "cpf": "36031268159",
       "data_nasc": "24/07/1953",
       "sexo": "Masculino",
@@ -17,7 +18,8 @@
     },
     {
       "id": "2",
-      "nome": "Maria Eloá Josefa Araújo",
+      "nome": "Maria ",
+      "sobrenome": "Eloá Josefa Araújo",
       "cpf": "26272533608",
       "data_nasc": "07/02/2004",
       "sexo": "Feminino",
@@ -32,7 +34,8 @@
     },
     {
       "id": "3",
-      "nome": "Hugo Pietro Eduardo Aparício",
+      "nome": "Hugo",
+      "sobrenome": "Pietro Eduardo Aparício",
       "cpf": "33617809340",
       "data_nasc": "15/03/1965",
       "sexo": "Masculino",
@@ -47,7 +50,8 @@
     },
     {
       "id": "4",
-      "nome": "Evelyn Daiane Almeida",
+      "nome": "Evelyn",
+      "sobrenome": "Daiane Almeida",
       "cpf": "78083829650",
       "data_nasc": "20/04/1950",
       "sexo": "Feminino",
@@ -62,7 +66,8 @@
     },
     {
       "id": "5",
-      "nome": "Lorenzo Caio Cavalcanti",
+      "nome": "Lorenzo",
+      "sobrenome": "Caio Cavalcanti",
       "cpf": "47121487136",
       "data_nasc": "01/07/2006",
       "sexo": "Masculino",
@@ -76,18 +81,19 @@
       "estado": "RS"
     },
     {
-      "id": "1294",
-      "nome": "Roni Santos Rodrigues",
+      "id": "48e2",
+      "nome": "Roni",
+      "sobrenome": "Santos Rodrigues",
       "cpf": "12345678911",
-      "dataNascimento": "2024-05-06",
+      "dataNascimento": "2020-10-10",
       "email": "teste@teste.com",
-      "senha": "123",
       "sexo": "Masculino",
-      "cep": "88107447",
-      "logradouro": "Rua Josemar José Schmitt",
-      "bairro": "Forquilhas",
-      "cidade": "São José",
-      "estado": "SC"
+      "senha": "123",
+      "cep": "25640400",
+      "logradouro": "Vila Antônio Latsch",
+      "bairro": "Castelanea",
+      "cidade": "Petrópolis",
+      "estado": "RJ"
     }
   ],
   "Locais": [
@@ -99,7 +105,8 @@
       "pais": "Brasil",
       "descricao": "A Praia de Tambaba é uma praia brasileira localizada no município de Conde, no estado da Paraíba. É conhecida por ser a primeira praia oficial de naturismo do Nordeste e por suas falésias avermelhadas. A praia é dividida em duas partes: a parte norte, onde o naturismo é obrigatório, e a parte sul, onde o naturismo é opcional.",
       "latitude": -7.2411,
-      "longitude": -34.8256
+      "longitude": -34.8256,
+      "cep": ""
     },
     {
       "id": "2",

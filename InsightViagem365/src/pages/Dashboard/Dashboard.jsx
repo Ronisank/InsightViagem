@@ -1,10 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "leaflet/dist/leaflet.css";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { MapContainer, TileLayer } from "react-leaflet";
+import { Card } from "../../components/Cards/Card";
+import { MapMarker } from "../../components/MapMarker/MapMarker";
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { Table } from "../../components/Table/Table";
 import { api } from "../../services/api";
+import "./Dashboard.css";
 
 function Dashboard() {
   const [Locais, setLocais] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
     // Função para buscar Locais da API
@@ -23,38 +30,57 @@ function Dashboard() {
 
     fetchData();
   }, []);
+  useEffect(() => {
+    const userData = async () => {
+      try {
+        const response = await api("/usuario/");
+        if (!response.ok) {
+          throw new Error("Erro ao buscar usuarios");
+        }
+        const data = await response.json();
+        setUsuarios(data);
+      } catch (error) {
+        console.error("Erro ao buscar usuarios:", error);
+      }
+    }
+    userData();
+  }
+  ,[]);
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <table className="table table-success table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome do Local</th>
-            <th>Cidade</th>
-            <th>Estado</th>
-            <th>Descrição</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Locais.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.local}</td>
-              <td>{item.cidade}</td>
-              <td>{item.estado}</td>
-              <td>{item.descricao}</td>
-              <td>{item.latitude}</td>
-              <td>{item.longitude}</td>
-              <td>
-                <Link to={`locais/${item.id}`}>Editar</Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container-dashboard">
+      <div className="sidebar">
+        <Sidebar className="elements-sidebar"/>
+      </div>
+      <div className="main-content">
+        <h1>Dashboard</h1>
+        <div className="containerCards">
+          <Card
+            title="Usuários Cadastrados"
+            count={usuarios.length}
+            className="card"
+          />
+          <Card
+            title="Locais Cadastrados"
+            count={Locais.length}
+            className="card"
+          />
+        </div>
+        <div className="containerTableAndMap">
+          <div className="table-container">
+            <Table locais={Locais} />
+          </div>
+          <div className="mapmarker">
+            <MapContainer
+              center={[-27.600326174840735, -48.64763669286935]}
+              zoom={13}
+              className="mapContainer"
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <MapMarker locais={Locais} />
+            </MapContainer>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
