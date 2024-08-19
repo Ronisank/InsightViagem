@@ -3,15 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Form } from "../../components/Form/Form";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { useAuth } from "../../contexts/Auth";
 import { api } from "../../services/api";
 import { destiny } from "../../services/serviceMaps";
 import "./RegisterLocations.css";
 
 function RegisterLocation() {
   const [Locais, setLocais] = useState([]);
+  const usuarioId = useAuth()
 
   useEffect(() => {
-    // Função para buscar Locais da API
     const fetchData = async () => {
       try {
         const response = await api("/Locais/");
@@ -33,9 +34,13 @@ function RegisterLocation() {
 
   async function addLocation(data) {
     try {
+      const locationData = {
+        ...data,
+        usuarioId: usuarioId.user.id,
+      }
       const response = await api("/Locais", {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(locationData),
       });
 
       reset();
@@ -47,8 +52,6 @@ function RegisterLocation() {
     if (cep && cep.length === 8) {
       try {
         const response = await destiny(cep);
-
-        // const addressComplete = response.address_type + ' ' + response.address_name
 
         setValue("local", response.address_name);
         setValue("logradouro", response.address);
@@ -85,41 +88,6 @@ function RegisterLocation() {
             className="form"
           />
         </div>
-        {/* <div>
-          <h1>Lista dos locais</h1>
-          <table className="table table-success table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nome do Local</th>
-                <th>Cidade</th>
-                <th>Estado</th>
-                <th>Descrição</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Locais.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.local}</td>
-                  <td>{item.cidade}</td>
-                  <td>{item.estado}</td>
-                  <td>{item.descricao}</td>
-                  <td>{item.latitude}</td>
-                  <td>{item.longitude}</td>
-                  <td>
-                    <Link to={`${item.id}`}>Editar</Link>
-                    <button onClick={() => deleteLocation(item.id)}>
-                      Excluir
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div> */}
       </div>
     </>
   );

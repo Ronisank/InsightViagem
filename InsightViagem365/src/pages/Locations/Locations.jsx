@@ -1,18 +1,16 @@
 import { PenBoxIcon, Trash2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { useAuth } from "../../contexts/Auth";
 import { api } from "../../services/api";
 import "./Locations.css";
 
 function Locations() {
   const [Locais, setLocais] = useState([]);
-  const { id } = useParams();
-  const { register, handleSubmit, reset } = useForm();
-  
+  const userId = useAuth();
+
   useEffect(() => {
-    // Função para buscar Locais da API
     const fetchData = async () => {
       try {
         const response = await api("/Locais/");
@@ -30,28 +28,35 @@ function Locations() {
 
   async function deleteLocation(id) {
     try {
-      const response = await api(`/Locais/${id}`, {
-        method: "DELETE",
-      });
-      if (response.ok) {
-        const newLocais = Locais.filter((item) => item.id !== id);
-        setLocais(newLocais);
-        alert("Local excluído com sucesso!");
+      const locationResponse = await api(`/Locais/${id}`);
+      const location = await locationResponse.json();
+   
+      if (userId.user.id === location.usuarioId) {
+        const response = await api(`/Locais/${id}`, {
+          method: "DELETE",
+        });
+        if (response.ok) {
+          const newLocais = Locais.filter((item) => item.id !== id);
+          setLocais(newLocais);
+          alert("Local excluído com sucesso!");
+        }
+      } else {
+        alert("Você não tem permissão para excluir este local");
       }
     } catch (error) {
       console.error("Erro ao excluir local:", error);
     }
   }
   return (
-    <div className="container-form">
-      <div className="elements-sidebar">
+    <div className="container-List">
+      <div className="list-elements-sidebar">
         <Sidebar />
       </div>
-      <div className="form-container">
-        <div className="titulo">
+      <div className="list-container">
+        <div className="titulo-list">
           <h1>Lista dos locais</h1>
         </div>
-        <table className="table table-borderless table-success table-hover table-container">
+        <table className="table table-borderless table-primary custom-table table-hover table-container">
           <thead>
             <tr>
               <th>ID</th>
@@ -76,7 +81,7 @@ function Locations() {
                 <td>{item.longitude}</td>
                 <td className="table-icon">
                   <Link to={`/dashboard/locais/${item.id}`}>
-                    <PenBoxIcon size={28} className="pen" id="pen"/>
+                    <PenBoxIcon size={28} className="pen" id="pen" />
                   </Link>
                   <button
                     onClick={() => deleteLocation(item.id)}
