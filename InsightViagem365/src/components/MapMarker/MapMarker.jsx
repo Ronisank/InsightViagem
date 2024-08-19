@@ -1,11 +1,15 @@
 import { useEffect } from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
 
-export function MapMarker({ locais }) {
+export function MapMarker({ locais, selectedLocation }) {
   const map = useMap();
 
   useEffect(() => {
-    if (locais.length > 0) {
+    if (selectedLocation) {
+      map.flyTo([selectedLocation.lat, selectedLocation.lng], 15, {
+        animate: true,
+      });
+    } else if (locais.length > 0) {
       const listLocationFirst = locais[0];
 
       map.flyTo(
@@ -17,7 +21,7 @@ export function MapMarker({ locais }) {
         { animate: true }
       );
     }
-  }, [locais]);
+  }, [selectedLocation, locais]);
   return (
     <>
       {locais.map((item) => (
