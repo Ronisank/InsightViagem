@@ -1,19 +1,19 @@
 .container-List {
   background-color: #f1e0d6;
   display: flex;
-  flex-direction: row; /* Organiza o conteúdo em linha: Sidebar à esquerda, conteúdo à direita */
-  min-height: 100vh; /* Altura mínima da tela */
-  overflow-x: hidden; /* Remove a rolagem horizontal */
+  flex-direction: row; 
+  min-height: 100vh; 
+  overflow-x: hidden;
 }
 
 .list-elements-sidebar {
   background-color: #595775;
   color: #f1e0d6;
   padding: 25px;
-  flex-shrink: 0; /* Sidebar não se expande ou reduz */
-  width: 250px; /* Define uma largura fixa para o sidebar */
-  height: 100vh; /* Sidebar ocupa toda a altura da tela */
-  position: sticky; /* Sidebar fixo ao rolar a página */
+  flex-shrink: 0;
+  width: 250px; 
+  height: 100vh; 
+  position: sticky;
   top: 0;
 }
 
@@ -24,17 +24,16 @@
   justify-content: flex-start;
   gap: 15px;
   padding: 20px;
-  flex-grow: 1; /* Faz com que o conteúdo ocupe o restante do espaço */
-  /* overflow-y: auto;  */
-  width: calc(100% - 250px); /* Tamanho da tela menos a largura do sidebar */
-  max-height: 100vh; /* Altura máxima do conteúdo */
+  flex-grow: 1; 
+  width: calc(100% - 250px);
+  max-height: 100vh;
   height: 800px;
 }
 
 .table-container {
   max-height: 450px;
-  overflow-y: auto; /* Habilita a rolagem apenas na vertical */
-  width: 100%; /* Garante que a tabela ocupe a largura disponível */
+  overflow-y: auto;
+  width: 100%;
   background-color: transparent;
   border: none;
   border-radius: 8px;
@@ -57,7 +56,6 @@
   background-color: transparent;
 }
 
-/* Barra de rolagem */
 .table-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -109,23 +107,23 @@
   text-align: center;
   width: 100%;
 }
-/* Estilos responsivos */
+
 @media (max-width: 768px) {
   .container-List {
-    flex-direction: column; /* Sidebar vai para o topo em telas pequenas */
+    flex-direction: column;
   }
 
   .list-elements-sidebar {
-    width: 100%; /* Sidebar ocupa toda a largura em telas pequenas */
+    width: 100%; 
     height: auto;
-    position: relative; /* Permite que se mova com o conteúdo */
+    position: relative;
   }
 
   .list-container {
-    width: 100%; /* Tabela ocupa toda a largura em telas menores */
+    width: 100%; 
   }
 
   .table-container {
-    max-height: 300px; /* Reduz a altura da tabela em telas menores */
+    max-height: 300px;
   }
 }
