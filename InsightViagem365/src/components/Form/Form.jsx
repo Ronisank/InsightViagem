@@ -1,6 +1,14 @@
-
-
-export function Form({ register, handleSubmit, addLocation, setValue, reset, onUpdate, id, customButton,Locations }) {
+export function Form({
+  register,
+  handleSubmit,
+  addLocation,
+  setValue,
+  reset,
+  onUpdate,
+  id,
+  customButton,
+  Locations,
+}) {
   return (
     <>
       <div className="col g-9">
@@ -68,12 +76,13 @@ export function Form({ register, handleSubmit, addLocation, setValue, reset, onU
               {...register("descricao")}
             />
           </div>
-          {customButton ? customButton : (<button
-            type="submit"
-            className="btn btn-primary"
-          >
-            Cadastrar
-          </button>)}
+          {customButton ? (
+            customButton
+          ) : (
+            <button type="submit" className="btn btn-primary-form">
+              Cadastrar
+            </button>
+          )}
         </form>
       </div>
     </>
