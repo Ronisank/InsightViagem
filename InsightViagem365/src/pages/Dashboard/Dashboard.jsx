@@ -12,6 +12,7 @@ import "./Dashboard.css";
 function Dashboard() {
   const [Locais, setLocais] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
   useEffect(() => {
     // Função para buscar Locais da API
@@ -42,14 +43,17 @@ function Dashboard() {
       } catch (error) {
         console.error("Erro ao buscar usuarios:", error);
       }
-    }
+    };
     userData();
-  }
-  ,[]);
+  }, []);
+
+  const handleRowClick = (lat, lng) => {
+    setSelectedLocation({ lat, lng });
+  };
   return (
     <div className="container-dashboard">
       <div className="sidebar">
-        <Sidebar className="elements-sidebar"/>
+        <Sidebar className="elements-sidebar" />
       </div>
       <div className="main-content">
         <h1>Dashboard</h1>
@@ -66,8 +70,8 @@ function Dashboard() {
           />
         </div>
         <div className="containerTableAndMap">
-          <div className="table-container">
-            <Table locais={Locais} />
+          <div className="table-container table-primary">
+            <Table locais={Locais} onRowClick={handleRowClick} />
           </div>
           <div className="mapmarker">
             <MapContainer
@@ -76,7 +80,7 @@ function Dashboard() {
               className="mapContainer"
             >
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <MapMarker locais={Locais} />
+              <MapMarker locais={Locais} selectedLocation={selectedLocation} />
             </MapContainer>
           </div>
         </div>

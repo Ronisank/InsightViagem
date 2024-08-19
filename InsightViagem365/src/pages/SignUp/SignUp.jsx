@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -61,20 +61,20 @@ function SignUp() {
           <form
             onSubmit={handleSubmit(addUser)}
             className="form-container-signup"
-          >
-            <div className="form-floating mb-0">
+            >
+            <h4>Cadastro InsightViagem365</h4>
+            <div className="form-input">
               <input
-                className="form-control input-h"
+                className="input-signup"
                 id="floatingNome"
                 placeholder="Digite o seu nome"
                 {...register("nome", { required: "O nome é obrigatório" })}
               />
-              <label htmlFor="floatingNome">Nome</label>
               <span>{formState.errors?.nome?.message}</span>
             </div>
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
-                className="form-control"
+                className="input-signup"
                 id="floatingCPF"
                 placeholder="cpf"
                 {...register("cpf", {
@@ -82,31 +82,18 @@ function SignUp() {
                   maxLength: 11,
                 })}
               />
-              <label htmlFor="floatingCPF">CPF</label>
               <span>{formState.errors?.cpf?.message}</span>
             </div>
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
                 type="date"
-                className="form-control"
+                className="input-signup"
                 id="floatingDate"
                 {...register("dataNascimento", {
                   required: "O data de nascimento é obrigatório",
                 })}
               />
-              <label htmlFor="floatingDate">Data de Nascimento</label>
               <span>{formState.errors?.dataNascimento?.message}</span>
-            </div>
-
-            <div className="form-floating mb-0">
-              <input
-                className="form-control"
-                id="floatingInput"
-                placeholder="Digite o seu email"
-                {...register("email", { required: "O email é obrigatório" })}
-              />
-              <label htmlFor="floatingInput">Email</label>
-              <span>{formState.errors?.email?.message}</span>
             </div>
 
             <fieldset className="fieldset" id="fieldset">
@@ -120,7 +107,7 @@ function SignUp() {
                   id="flexRadioDefault1"
                   {...register("sexo")}
                 />
-                <label className="form-check-label" htmlFor="flexRadioDefault1">
+                <label className="form-check-label">
                   Feminino
                 </label>
               </div>
@@ -134,80 +121,84 @@ function SignUp() {
                   id="flexRadioDefault2"
                   {...register("sexo")}
                 />
-                <label className="form-check-label" htmlFor="flexRadioDefault2">
+                <label className="form-check-label">
                   Masculino
                 </label>
               </div>
             </fieldset>
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
-                className="form-control"
+                className="input-signup"
+                id="floatingInput"
+                placeholder="Digite o seu email"
+                {...register("email", { required: "O email é obrigatório" })}
+              />
+              <span>{formState.errors?.email?.message}</span>
+            </div>
+
+            <div className="form-input">
+              <input
+                className="input-signup"
                 id="floatingPassword"
                 placeholder="Senha"
                 type="password"
                 {...register("senha", { required: "A senha é obrigatória" })}
               />
-              <label htmlFor="floatingPassword">Senha</label>
               <span>{formState.errors?.senha?.message}</span>
             </div>
 
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
                 type="text"
-                className="form-control h-25 d-inline-block"
+                className="input-signup"
                 id="floatingCep"
                 placeholder="cep"
                 {...register("cep", { required: "Cep é obrigatório" })}
               />
-              <label htmlFor="floatingCep">CEP</label>
               <span>{formState.errors?.cep?.message}</span>
             </div>
 
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
                 type="text"
-                className="form-control"
+                className="input-signup"
                 id="floatingLogradouro"
                 placeholder="Digite o seu endereço"
                 {...register("logradouro")}
               />
-              <label htmlFor="floatingLogradouro">Endereço</label>
               <span>{formState.errors?.logradouro?.message}</span>
             </div>
 
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
                 type="text"
-                className="form-control"
+                className="input-signup"
                 id="floatingBairro"
                 placeholder="Digite o seu bairro"
                 {...register("bairro")}
               />
-              <label htmlFor="floatingBairro">Bairro</label>
               <span>{formState.errors?.bairro?.message}</span>
             </div>
 
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
                 type="text"
-                className="form-control"
+                className="input-signup"
                 id="floatingCidade"
                 placeholder="Digite a sua cidade"
                 {...register("cidade")}
               />
-              <label htmlFor="floatingCidade">Cidade</label>
               <span>{formState.errors?.cidade?.message}</span>
             </div>
 
-            <div className="form-floating mb-0">
+            <div className="form-input">
               <input
                 type="text"
-                className="form-control"
+                className="input-signup"
                 id="floatingEstado"
                 placeholder="Digite o seu estado"
                 {...register("estado")}
               />
-              <label htmlFor="floatingEstado">Estado</label>
               <span>{formState.errors?.estado?.message}</span>
             </div>
 

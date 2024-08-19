@@ -1,6 +1,7 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../../../images/logo-InsightViagem365.png";
 import { useAuth } from "../../contexts/Auth";
 import "./Login.css";
 
@@ -25,12 +26,14 @@ function Login() {
   return (
     <div className="container">
       <form className="form-container-login" onSubmit={handleSubmit(userLogin)}>
-        <h1>Login</h1>
+        <h5>InsightViagem365</h5>
+        <img src={logo} alt="InsightViagem365 Logo" className="logo-login" />
+        <h1 className="titulo-login">Login</h1>
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            className="form-control"
+            className="input"
             id="email"
             placeholder="Digite seu Email"
             required
@@ -41,7 +44,7 @@ function Login() {
           <label htmlFor="password">Senha</label>
           <input
             type="password"
-            className="form-control"
+            className="input"
             id="password"
             placeholder="Digite sua senha"
             required
@@ -49,14 +52,15 @@ function Login() {
           />
         </div>
         <div className="button-form-div">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn-login">
             Entrar
           </button>
-          <Link to="/SignUp">
-            <button type="button" className="btn btn-primary">
-              Cadastre-se
-            </button>
-          </Link>
+          <span className="text-span">
+            Ainda não possui conta?
+            <Link to="/SignUp" className="text-signup">
+              Cadastre-se agora!              
+            </Link>
+          </span>
         </div>
       </form>
     </div>

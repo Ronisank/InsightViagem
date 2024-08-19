@@ -8,6 +8,12 @@
   background-color: #595775;
   color: #f1e0d6;
 }
+.sidebar-logo {
+  width: 120px;/* Make sure the logo fits within the sidebar */
+  height: 120px;
+  border-radius: 100%;
+}
+
 .elements-sidebar{
 padding: 5px;
 display: flex;
