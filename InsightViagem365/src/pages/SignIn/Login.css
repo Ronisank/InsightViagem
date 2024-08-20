@@ -17,22 +17,20 @@
   justify-content: center;
   align-items: center;
   width: 500px;
-  height: 800px;
+  height: 650px;
   border-radius: 150px 0 150px 0px;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 300;
-  text-align: center;
+  text-align: flex-start;
 }
 .button-form-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  gap: 10px;
 }
 h5{
   color: #bf988f;
@@ -41,20 +39,19 @@ h5{
   text-shadow: #8a6562 8px 8px 3px;
 }
 .logo-login {
-  width: 120px;/* Make sure the logo fits within the sidebar */
+  width: 120px;
   height: 120px;
   border-radius: 100%;
 }
 .titulo-login{
   color: #bf988f;
-  padding-bottom: 25px;
 }
 .text-span {
   display: inline-block;
   text-align: center;
   margin-top: 10px;
   font-size: 1rem;
-  color: white;
+  color: #bf988f;
 }
 
 .text-span .text-signup {
@@ -71,23 +68,23 @@ h5{
 }
 .input {
   width: 100%;
-  margin-bottom: 15px;
   background-color: #f1f1f1;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #aba6bf;
   border-radius: 5px;
   color: #333;
-  padding: 12px 20px;
+  padding: 5px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   outline: none;
+  font-size: 16px;
 }
 
 input:focus {
-  border-color: #bf988f; /* Muda a cor da borda ao focar */
-  box-shadow: 0 0 8px rgba(191, 152, 143, 0.4); /* Realça o foco com um leve brilho */
+  border-color: #bf988f;
+  box-shadow: 0 0 8px rgba(191, 152, 143, 0.4); 
   background-color: #fff;
 }
 .btn-login {
-  width: 413px;
+  width: 280px;
   background-color: #595775;
   color: #bf988f;
   border:1px solid #aba6bf;
@@ -96,11 +93,12 @@ input:focus {
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
-  height: 62px;
+  height: 40px;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #9d7a71; /* Mudança de cor ao passar o mouse */
+  background-color: #9d7a71;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #595775;
 }
@@ -111,11 +109,10 @@ button:focus {
 }
 
 button:active {
-  transform: scale(0.98); /* Leve efeito de clique */
+  transform: scale(0.98);
   background-color: #8a6562;
 }
 
-/* Estilo específico para o container dos inputs e botões */
 .form-container-login {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -127,12 +124,6 @@ button:active {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.button-form-div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
 @keyframes changeBackgroundImage {
   0% {
     background-image: url("images/denys-nevozhai-guNIjIuUcgY-unsplash.jpg");

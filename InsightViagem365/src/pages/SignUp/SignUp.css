@@ -1,12 +1,3 @@
-/* 
-Para centralizar o formulário de cadastro na tela e garantir que todos os elementos estejam alinhados corretamente, você pode ajustar o CSS da seguinte maneira:
-
-Centralizar o Container Principal: Use flexbox para centralizar o .container-SignUp e o .back.
-Centralizar o Formulário: Aplique estilos adequados ao formulário e seus elementos para que fiquem centralizados dentro do container.
-CSS Atualizado
-css
-Copiar código
-/* Container principal */
 .container-SignUp {
   width: 100%;
   height: 100vh;
@@ -21,15 +12,13 @@ Copiar código
   animation: changeBackgroundImage 15s infinite;
 }
 
-/* Container do formulário */
 .back {
   width: 100%;
-  max-width: 800px; /* Limite máximo de largura */
-  max-height: 100%;
+  max-width: 700px;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 0px 99px 0px 99px; /* Ajuste o border-radius conforme necessário */
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona sombra para profundidade */
+  border-radius: 0px 99px 0px 99px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   overflow-y:auto;
 }
 .back::-webkit-scrollbar {
@@ -37,7 +26,6 @@ Copiar código
   height: 8px;
 }
 
-/* Estilos do formulário */
 .form-container-signup {
   display: flex;
   flex-direction: column;
@@ -45,8 +33,8 @@ Copiar código
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 500px; /* Largura máxima do formulário */
-  margin: 40px auto;
+  max-width: 500px;
+  margin: 15px auto;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 200;
@@ -56,25 +44,32 @@ Copiar código
 }
 h4{
   color: #bf988f;
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
-/* Estilos dos inputs */
+
 .input-signup {
-  width: 400px;
+  width: 440px;
   padding: 10px; 
-  height: 40px; 
+  height: 35px; 
   font-size: 1rem; 
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 15px; 
 }
-
-/* Estilos do botão */
+.form-input-duplo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 30px;
+  gap: 5px;
+  font-size: 14px;
+  padding: 0;
+}
 .btn {
-  width: 400px; 
+  width: 440px; 
   height: 40px;
-  margin-top: 20px; 
+  margin-top: 10px; 
   background-color: #595775;
   color: #bf988f;
   border: none;
@@ -89,9 +84,8 @@ h4{
   color: #595775;
 }
 
-/* Estilos do fieldset */
 .fieldset {
-  width: 400px;
+  width: 440px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -106,12 +100,12 @@ h4{
   margin: 0; 
 }
 
-/* Estilos dos erros */
 .form-input span {
   color: red;
-  font-size: 0.875rem; /* Menor tamanho de fonte para mensagens de erro */
+  font-size: 0.875rem;
   margin-top: 5px;
 }
+
 /* Responsividade */
 @media (max-width: 768px) {
   .back {
@@ -136,7 +130,7 @@ h4{
   }
 
   .fieldset {
-    flex-direction: column; /* Torna os itens do fieldset verticais em telas menores */
+    flex-direction: column;
   }
 }
 
@@ -163,7 +157,7 @@ h4{
   }
 
   .fieldset {
-    height: auto; /* Ajusta a altura para caber o conteúdo */
+    height: auto;
     padding: 5px;
   }
 }

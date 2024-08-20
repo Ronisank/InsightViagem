@@ -33,7 +33,7 @@ h1 {
 .containerCards {
   display: flex;
   gap: 10px;
-  margin: 10px 0;
+  margin: 0;
 }
 .card {
   height: 200px;
@@ -46,6 +46,7 @@ h1 {
 .table-container {
   height: 450px;
   overflow: auto;
+  ;
 }
 
 .headerContainer {
