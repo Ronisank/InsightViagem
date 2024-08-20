@@ -42,7 +42,9 @@ function RegisterLocation() {
         method: "POST",
         body: JSON.stringify(locationData),
       });
-
+      if (response.ok) {
+        alert("Local cadastrado com sucesso!");
+      }
       reset();
     } catch (error) {
       console.error("Erro ao cadastrar local:", error);

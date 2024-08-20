@@ -48,16 +48,3 @@ export function AuthProvider({ children }) {
 export function useAuth() {
   return useContext(AuthContext);
 }
-// (
-//     <AuthContext.Provider value={{ user, signIn }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// }
-// export function useAuth() {
-//   const contexto = useContext(AuthContext);
-//   return contexto;
-// }
-// AuthProvider.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };

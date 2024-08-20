@@ -61,14 +61,21 @@ function SignUp() {
           <form
             onSubmit={handleSubmit(addUser)}
             className="form-container-signup"
-            >
+          >
             <h4>Cadastro InsightViagem365</h4>
-            <div className="form-input">
+            <div className="form-input-duplo">
               <input
                 className="input-signup"
                 id="floatingNome"
                 placeholder="Digite o seu nome"
                 {...register("nome", { required: "O nome é obrigatório" })}
+              />
+              <span>{formState.errors?.nome?.message}</span>
+              <input
+                className="input-signup"
+                id="floatingSobreNome"
+                placeholder="Digite o Sobrenome"
+                {...register("sobrenome", { required: "O sobrenome é obrigatório" })}
               />
               <span>{formState.errors?.nome?.message}</span>
             </div>
@@ -107,9 +114,7 @@ function SignUp() {
                   id="flexRadioDefault1"
                   {...register("sexo")}
                 />
-                <label className="form-check-label">
-                  Feminino
-                </label>
+                <label className="form-check-label">Feminino</label>
               </div>
 
               <div className="form-check">
@@ -121,9 +126,7 @@ function SignUp() {
                   id="flexRadioDefault2"
                   {...register("sexo")}
                 />
-                <label className="form-check-label">
-                  Masculino
-                </label>
+                <label className="form-check-label">Masculino</label>
               </div>
             </fieldset>
             <div className="form-input">

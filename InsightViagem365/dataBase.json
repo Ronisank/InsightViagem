@@ -4,14 +4,13 @@
       "id": "1",
       "nome": "Kaique",
       "sobrenome": " Bernardo Moreira",
-      "cpf": "36031268159",
+      "cpf": "36031268160",
       "data_nasc": "24/07/1953",
       "sexo": "Masculino",
-      "email": "kaique_bernardo_moreira@caporal.biz",
+      "email": "kaique_bernardo_moreira@caporal.bi",
       "senha": "6woqtTRj04",
-      "cep": "58103-748",
+      "cep": "58103748",
       "endereco": "Rua Dezessete de Abril",
-      "numero": 375,
       "bairro": "Jardim Camboinha",
       "cidade": "Cabedelo",
       "estado": "PB"
@@ -25,9 +24,8 @@
       "sexo": "Feminino",
       "email": "mariaeloaaraujo@gsw.com.br",
       "senha": "ZgaNXnCrtD",
-      "cep": "57600-450",
+      "cep": "57600450",
       "endereco": "Travessa José Dias de Oliveira",
-      "numero": 612,
       "bairro": "Centro",
       "cidade": "Palmeira dos Índios",
       "estado": "AL"
@@ -41,9 +39,8 @@
       "sexo": "Masculino",
       "email": "hugopietroaparicio@bol.com.br",
       "senha": "uMs9R1ST5K",
-      "cep": "89253-035",
+      "cep": "89253035",
       "endereco": "Travessa Ministro Luiz Gallotti",
-      "numero": 165,
       "bairro": "Centro",
       "cidade": "Jaraguá do Sul",
       "estado": "SC"
@@ -57,9 +54,8 @@
       "sexo": "Feminino",
       "email": "evelyn-almeida82@eclatt.com.br",
       "senha": "WF6qq6hW4s",
-      "cep": "86670-970",
+      "cep": "86670970",
       "endereco": "Avenida Governador Moisés Lupion 795",
-      "numero": 531,
       "bairro": "Centro",
       "cidade": "Itaguajé",
       "estado": "PR"
@@ -73,9 +69,8 @@
       "sexo": "Masculino",
       "email": "lorenzo_cavalcanti@nelsonalfredoimoveis.com.br",
       "senha": "qiNxJou5jq",
-      "cep": "95045-118",
+      "cep": "95045118",
       "endereco": "Rua João Gregório Paniz",
-      "numero": 627,
       "bairro": "Centenário",
       "cidade": "Caxias do Sul",
       "estado": "RS"
@@ -84,9 +79,9 @@
       "id": "6",
       "nome": "Roni",
       "sobrenome": "Santos Rodrigues",
-      "cpf": "12345678911",
+      "cpf": "12345678912",
       "dataNascimento": "2020-10-10",
-      "email": "teste@teste.com",
+      "email": "teste@teste.comm",
       "sexo": "Masculino",
       "senha": "123",
       "cep": "25640400",
@@ -94,11 +89,27 @@
       "bairro": "Castelanea",
       "cidade": "Petrópolis",
       "estado": "RJ"
+    },
+    {
+      "id": "a590",
+      "nome": "Kaique",
+      "sobrenome": " Bernardo Moreira",
+      "cpf": "12345678911",
+      "dataNascimento": "2000-10-10",
+      "sexo": "Masculino",
+      "email": "teste@teste.com",
+      "senha": "123",
+      "cep": "58103748",
+      "logradouro": "Rua Dezessete de Abril",
+      "bairro": "Jardim Camboinha",
+      "cidade": "Cabedelo",
+      "estado": "PB"
     }
   ],
   "Locais": [
     {
       "id": "1",
+      "cep": "58322000",
       "local": "Praia de Tambaba",
       "cidade": "Conde",
       "estado": "PB",
@@ -106,11 +117,11 @@
       "descricao": "A Praia de Tambaba é uma praia brasileira localizada no município de Conde, no estado da Paraíba. É conhecida por ser a primeira praia oficial de naturismo do Nordeste e por suas falésias avermelhadas. A praia é dividida em duas partes: a parte norte, onde o naturismo é obrigatório, e a parte sul, onde o naturismo é opcional.",
       "latitude": -7.2411,
       "longitude": -34.8256,
-      "cep": "",
       "usuarioId": "1"
     },
     {
       "id": "2",
+      "cep": "59178000",
       "local": "Praia de Pipa",
       "cidade": "Tibau do Sul",
       "estado": "RN",
@@ -122,6 +133,7 @@
     },
     {
       "id": "3",
+      "cep": "62598000",
       "local": "Praia de Jericoacoara",
       "cidade": "Jijoca de Jericoacoara",
       "estado": "CE",
@@ -133,6 +145,7 @@
     },
     {
       "id": "4",
+      "cep": "22420006",
       "local": "Praia de Copacabana",
       "cidade": "Rio de Janeiro",
       "estado": "RJ",
@@ -144,6 +157,7 @@
     },
     {
       "id": "5",
+      "cep": "62800000",
       "local": "Praia de Canoa Quebrada",
       "cidade": "Aracati",
       "estado": "CE",
@@ -177,7 +191,7 @@
       "descricao": "teste deletar1",
       "logradouro": "Rua Josemar José Schmitt",
       "bairro": "Forquilhas",
-      "usuarioId": "5"
+      "usuarioId": "6"
     }
   ]
 }
