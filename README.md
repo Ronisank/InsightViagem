@@ -9,13 +9,17 @@ Os usuários podem explorar e descobrir novos destinos, encontrar dicas de viage
 
 **React.js:** *Um framework, uma poderosa biblioteca para construção de interfaces visuais em JavaScript*
 
-**css** *CSS (Cascading Style Sheets) usado para estilizar elementos no HTML.*
+**CSS** *(Cascading Style Sheets) usado para estilizar elementos no HTML.*
 
 **Bootstrap** *Framework front-end para desenvolvimento HTML, CSS, JS.*
 
 **JSON Server** *é uma biblioteca Node.js que simula uma API RESTful a partir de um arquivo JSON.*
 
+**leaflet.js** *Uma biblioteca JavaScript de código aberto para mapas interativos compatíveis com dispositivos móveis.*
+
 **Hooks React.Js** *Utilizado essas funções especiais que permitem utilizar o estado e outros recursos do React sem a necessidade de componentes de classe.*
+
+**Usado API de terceiros como a AwesomeAPI.*
 
 **Desenvolvimento com VScode:** *Editor de código moderno e eficiente.*
 
